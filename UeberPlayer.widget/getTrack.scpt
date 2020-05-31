@@ -161,20 +161,20 @@ on extractSpotifyArt()
 end extractSpotifyArt
 
 -- Extract artwork from Apple Music
-on extractMusicArt()
-  tell application "Music" to tell artwork 1 of current track
-    set srcBytes to raw data
-  end tell
+--on extractMusicArt()
+--  tell application "Music" to tell artwork 1 of current track
+--    set srcBytes to raw data
+--  end tell
 
   -- Use alternate way of getting the path because the other one doesn't work for some reason?
-  set myAltPath to POSIX path of (path to me)
-	set AppleScript's text item delimiters to "/"
-	set myAltPath to (myAltPath's text items 1 thru -2 as string) & "/"
-	set AppleScript's text item delimiters to ""
-  set myAltPath to (myAltPath as POSIX file) & "cache:" & artworkFilename as string
+--  set myAltPath to POSIX path of (path to me)
+--	set AppleScript's text item delimiters to "/"
+--	set myAltPath to (myAltPath's text items 1 thru -2 as string) & "/"
+--	set AppleScript's text item delimiters to ""
+--  set myAltPath to (myAltPath as POSIX file) & "cache:" & artworkFilename as string
 
-  set outFile to open for access file myAltPath with write permission
-  set eof outFile to 0
-  write srcBytes to outFile starting at eof
-  close access outFile
-end extractMusicArt
+--  set outFile to open for access file myAltPath with write permission
+--  set eof outFile to 0
+--  write srcBytes to outFile starting at eof
+--  close access outFile
+--end extractMusicArt
